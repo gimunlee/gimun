@@ -1,0 +1,2 @@
+d:\zip -rqu voice_shop.zip index.js package.json node_modules
+aws s3 mv voice_shop.zip s3://voice-shop/voice-shop.zip

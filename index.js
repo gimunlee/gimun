@@ -83,9 +83,10 @@ const handlers = {
     },
     'SeeDeliveries': function () {
         const alexaHandler = this;
+        console.log("requesting on " + "http://" + process.env.VoiceShopServerHost + "/deliveries");
         request.get(
             {
-                "url":"https://" + process.env.GSShopServerHost + "/deliveries",
+                "url":"http://" + process.env.VoiceShopServerHost + "/deliveries",
                 "body":"{}"
             },
             function(error,response,body) {
@@ -110,7 +111,7 @@ const handlers = {
     'ChooseDelivery': function() {
     },
     'LaunchRequest': function () {
-        this.emit(':ask', "Welcome to G.S. Shop");
+        this.emit(':ask', "Welcome to Voice Shop");
     },
     'AMAZON.HelpIntent': function () {
         const reprompt = "For more information, please check the card on your alexa app.";
